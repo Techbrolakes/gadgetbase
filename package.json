@@ -1,0 +1,48 @@
+{
+    "name": "gadegetbase-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "scan": "tsc --project tsconfig.json --pretty --noEmit",
+        "clean": "npx prettier --write **/*.{js,jsx,ts,tsx,json} && npx prettier --write *.{js,jsx,ts,tsx,json}",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.0",
+        "@emotion/styled": "^11.11.0",
+        "@mui/material": "^5.13.1",
+        "@types/node": "20.2.1",
+        "@types/react": "18.2.6",
+        "@types/react-dom": "18.2.4",
+        "axios": "^1.4.0",
+        "dayjs": "^1.11.7",
+        "eslint": "8.40.0",
+        "eslint-config-next": "13.4.3",
+        "next": "13.4.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-hot-toast": "^2.4.1",
+        "sass": "^1.62.1",
+        "swiper": "^9.3.2",
+        "typescript": "5.0.4"
+    },
+    "devDependencies": {
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-sort-keys-fix": "^1.1.2",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}
