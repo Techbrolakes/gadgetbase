@@ -1,3 +1,0 @@
-{
-    "**/*.{js,jsx,ts,tsx}": ["next lint", "npm run scan", "npm run clean", "git add"]
-}

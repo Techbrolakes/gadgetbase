@@ -21,11 +21,13 @@
             "@styles/*": ["./styles/*"],
             "@utils/*": ["./utils/*"],
             "@hooks/*": ["./hooks/*"],
-            "@/services/*": ["./config/services/*"],
-            "@/layouts/*": ["./components/layouts/*"],
-            "@/pageComponents/*": ["./components/pageComponents/*"]
+            "@services/*": ["./config/services/*"],
+            "@layouts/*": ["./components/layouts/*"],
+            "@pageComponents/*": ["./components/pageComponents/*"],
+            "@store": ["./store/index.ts"],
+            "@slices/*": ["./slices/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js", "tailwind.config.js"],
     "exclude": ["node_modules"]
 }
