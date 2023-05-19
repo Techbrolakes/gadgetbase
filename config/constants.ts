@@ -26,8 +26,18 @@ const API = {
     timeout: 500000,
 };
 
+const COOKIES = {
+    user: 'gadgetbase-user',
+};
+
+const CLIENT_ROUTES = {
+    home: '/',
+};
+
 const constants = {
     API,
+    CLIENT_ROUTES,
+    COOKIES,
 };
 
 export default constants;

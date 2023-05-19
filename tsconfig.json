@@ -22,10 +22,12 @@
             "@utils/*": ["./utils/*"],
             "@hooks/*": ["./hooks/*"],
             "@services/*": ["./config/services/*"],
+            "@config/*": ["./config/*"],
             "@layouts/*": ["./components/layouts/*"],
             "@pageComponents/*": ["./components/pageComponents/*"],
             "@store": ["./store/index.ts"],
-            "@slices/*": ["./slices/*"]
+            "@slices/*": ["./slices/*"],
+            "@logger": ["./logger.ts"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js", "tailwind.config.js"],
