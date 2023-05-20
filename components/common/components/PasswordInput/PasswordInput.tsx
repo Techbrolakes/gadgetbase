@@ -6,10 +6,11 @@ import {
     FormErrorMessage,
     InputProps,
     InputRightElement,
-    Button,
     InputGroup,
 } from '@chakra-ui/react';
 import { omit } from 'lodash';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import extendedStyles from '@/styles/extendedStyles';
 
 interface IProps extends InputProps {
     label?: string;
@@ -17,6 +18,8 @@ interface IProps extends InputProps {
     help?: React.ReactNode;
     variant?: 'outline' | 'filled' | 'flushed' | 'unstyled';
 }
+
+const { InputSX, LabelSX } = extendedStyles;
 
 const PasswordInput: React.FC<IProps> = (props) => {
     const { label, value, placeholder, validateStatus, help, className = '', variant } = props;
@@ -26,7 +29,7 @@ const PasswordInput: React.FC<IProps> = (props) => {
 
     return (
         <FormControl isInvalid={validateStatus}>
-            <FormLabel textStyle="p">{label}</FormLabel>
+            <FormLabel sx={LabelSX}>{label}</FormLabel>
             <InputGroup size="lg">
                 <ChakraInput
                     variant={variant || 'outline'}
@@ -35,11 +38,19 @@ const PasswordInput: React.FC<IProps> = (props) => {
                     placeholder={placeholder}
                     {...omit(props, ['validateStatus', 'className', 'help'])}
                     className={className}
+                    sx={InputSX}
                 />
                 <InputRightElement width="4.5rem">
-                    <Button h="1.75rem" size="sm" onClick={handleClick}>
-                        {show ? 'Hide' : 'Show'}
-                    </Button>
+                    {show ? (
+                        <AiOutlineEyeInvisible
+                            onClick={handleClick}
+                            size="22px"
+                            color="#718096"
+                            className="cursor-pointer"
+                        />
+                    ) : (
+                        <AiOutlineEye onClick={handleClick} size="22px" color="#718096" className="cursor-pointer" />
+                    )}
                 </InputRightElement>
             </InputGroup>
 

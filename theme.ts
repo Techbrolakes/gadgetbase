@@ -13,6 +13,10 @@ const theme = extendTheme({
             },
         },
     },
+    fonts: {
+        body: 'Rubik, sans-serif', // Set the font family for the body text
+        heading: 'Rubik, sans-serif', // Set the font family for headings
+    },
     textStyles: {
         h1: {
             fontSize: ['48px', '72px'],
@@ -28,7 +32,7 @@ const theme = extendTheme({
         },
         p: {
             color: 'gray.600',
-            fontSize: ['16px', '20px'],
+            fontSize: ['14px', '16px'],
             fontWeight: 'normal',
             lineHeight: '110%',
         },

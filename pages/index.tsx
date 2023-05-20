@@ -29,14 +29,15 @@ export default function HomePage() {
                 <Input
                     label="Please Enter Name"
                     value={name}
-                    variant="flushed"
+                    validateStatus={true}
+                    variant="outline"
                     onChange={handleNameChange}
                     placeholder="Enter Name"
                 />
-                <PasswordInput label="Please Enter Password" variant="flushed" placeholder="Password" />
+                <PasswordInput label="Please Enter Password" variant="outline" placeholder="Password" />
 
                 <Select
-                    variant="flushed"
+                    variant="outline"
                     label="Please Select Field"
                     placeholder="Select Field"
                     value={select}
@@ -50,7 +51,7 @@ export default function HomePage() {
 
                 <Text textStyle="p">Button Variants</Text>
 
-                <Button name="Submit" loadingText="Loading" />
+                <Button name="Submit" loadingText="Loading" width="fit-content" />
             </div>
         </>
     );

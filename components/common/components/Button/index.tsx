@@ -7,15 +7,20 @@ interface IProps extends ButtonProps {
     loadingText?: string;
     variant?: 'solid' | 'outline' | 'ghost' | 'link' | 'unstyled' | undefined;
     colorScheme?: string;
+    background?: string;
+    width?: ButtonProps['width'];
 }
 
-const Button: React.FC<IProps> = ({ name, loading, loadingText, variant, colorScheme }) => {
+const Button: React.FC<IProps> = ({ name, loading, loadingText, variant, colorScheme, background, width }) => {
     return (
         <ChakraButton
+            background={background || 'blue.500'}
             colorScheme={colorScheme || 'blue'}
+            borderRadius={'2px'}
             variant={variant}
             isLoading={loading}
             loadingText={loadingText || 'Submitting'}
+            width={width}
         >
             {name}
         </ChakraButton>

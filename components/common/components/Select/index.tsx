@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormControl, FormLabel, Select as ChakraSelect, FormErrorMessage, SelectProps } from '@chakra-ui/react';
 import { omit } from 'lodash';
+import extendedStyles from '@/styles/extendedStyles';
 
 interface IOption {
     value: string;
@@ -15,12 +16,14 @@ interface IProps extends SelectProps {
     options: IOption[];
 }
 
+const { InputSX, LabelSX } = extendedStyles;
+
 const Select: React.FC<IProps> = (props) => {
     const { label, value, placeholder, validateStatus, help, className = '', variant, options } = props;
 
     return (
         <FormControl isInvalid={validateStatus}>
-            <FormLabel textStyle="p">{label}</FormLabel>
+            <FormLabel sx={LabelSX}>{label}</FormLabel>
             <ChakraSelect
                 size="lg"
                 variant={variant || 'outline'}
@@ -28,9 +31,10 @@ const Select: React.FC<IProps> = (props) => {
                 placeholder={placeholder}
                 {...omit(props, ['validateStatus', 'className', 'help'])}
                 className={className}
+                sx={InputSX}
             >
                 {options.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <option className="space-y-4" key={option.value} value={option.value}>
                         {option.label}
                     </option>
                 ))}
