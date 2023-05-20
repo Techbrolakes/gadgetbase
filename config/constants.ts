@@ -1,5 +1,5 @@
 const API = {
-    baseURL: 'http://localhost:400/api/v1/',
+    baseURL: 'https://gadgetbase-api.onrender.com/api/v1/',
     error: {
         aborted: {
             code: 'ECONNABORTED',
@@ -27,6 +27,8 @@ const API = {
 };
 
 const COOKIES = {
+    maxAge: 21600,
+    path: '/',
     user: 'gadgetbase-user',
 };
 

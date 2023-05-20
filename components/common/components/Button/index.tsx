@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button as ChakraButton, ButtonProps } from '@chakra-ui/react';
 
-interface IProps extends ButtonProps {
+interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     name: string;
     loading?: boolean;
     loadingText?: string;
@@ -14,6 +14,7 @@ interface IProps extends ButtonProps {
 const Button: React.FC<IProps> = ({ name, loading, loadingText, variant, colorScheme, background, width }) => {
     return (
         <ChakraButton
+            type="submit"
             background={background || 'blue.500'}
             colorScheme={colorScheme || 'blue'}
             borderRadius={'2px'}

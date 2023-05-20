@@ -7,7 +7,7 @@ const InputSX = {
         borderColor: 'red.300',
         boxShadow: 'none',
     },
-    _placeholder: { color: 'gray.500', fontSize: '15px' },
+    _placeholder: { color: 'gray.400', fontSize: '15px' },
     borderRadius: '2px',
     color: 'gray.500',
     fontSize: '14px',

@@ -25,6 +25,7 @@
         "dayjs": "^1.11.7",
         "eslint": "8.40.0",
         "eslint-config-next": "13.4.3",
+        "formik": "^2.2.9",
         "framer-motion": "^10.12.12",
         "lodash": "^4.17.21",
         "next": "13.4.3",
@@ -36,7 +37,8 @@
         "react-redux": "^8.0.5",
         "sass": "^1.62.1",
         "swiper": "^9.3.2",
-        "typescript": "5.0.4"
+        "typescript": "5.0.4",
+        "yup": "^1.1.1"
     },
     "devDependencies": {
         "@types/lodash": "^4.14.194",

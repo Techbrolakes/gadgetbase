@@ -5,7 +5,7 @@ import extendedStyles from '@/styles/extendedStyles';
 
 interface IProps extends InputProps {
     label?: string;
-    validateStatus?: boolean;
+    validateStatus?: any;
     help?: React.ReactNode;
     variant?: 'outline' | 'filled' | 'flushed' | 'unstyled';
 }
@@ -16,7 +16,7 @@ const Input: React.FC<IProps> = (props) => {
     const { label, value, placeholder, validateStatus, help, className = '', variant } = props;
 
     return (
-        <FormControl isInvalid={validateStatus}>
+        <FormControl isInvalid={validateStatus === 'error' ? true : false}>
             <FormLabel sx={LabelSX}>{label}</FormLabel>
             <ChakraInput
                 textStyle="p"

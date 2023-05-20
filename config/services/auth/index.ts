@@ -13,7 +13,7 @@ export interface ILoginResponse extends ApiResponse {
 
 const register = (payload: Payload): Promise<ApiResponse> => request.post({ payload, route: routes.auth.registerUser });
 
-const login = (payload: Payload): Promise<ApiResponse> => request.post({ payload, route: routes.auth.login });
+const login = (payload: Payload): Promise<ILoginResponse> => request.post({ payload, route: routes.auth.login });
 
 const recoverPassword = (payload: Payload): Promise<ApiResponse> =>
     request.post({ payload, route: routes.auth.recoverPassword });

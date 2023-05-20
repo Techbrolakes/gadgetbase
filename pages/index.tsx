@@ -51,7 +51,7 @@ export default function HomePage() {
 
                 <Text textStyle="p">Button Variants</Text>
 
-                <Button name="Submit" loadingText="Loading" width="fit-content" />
+                <Button name="Submit" loading loadingText="Loading" width="fit-content" />
             </div>
         </>
     );

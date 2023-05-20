@@ -8,6 +8,11 @@ module.exports = {
     ],
     plugins: [],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                customblue: '#0A2E65',
+                primarybg: '#F4F7FA',
+            },
+        },
     },
 };
