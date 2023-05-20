@@ -1,12 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .gb-btn {
+        @apply rounded-tl-lg rounded-tr-lg rounded-br-lg bg-blue h-14 text-lg;
+    }
+    .gb-radius {
+        @apply rounded-tl-3xl rounded-tr-3xl rounded-br-3xl;
+    }
+}
