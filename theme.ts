@@ -15,7 +15,7 @@ const theme = extendTheme({
     },
     fonts: {
         body: 'satoshi, sans-serif', // Set the font family for the body text
-        heading: 'satoshi, sans-serif', // Set the font family for headings
+        heading: 'duffish, serif',
     },
     textStyles: {
         h1: {
@@ -32,6 +32,12 @@ const theme = extendTheme({
         },
         p: {
             color: 'gray.600',
+            fontSize: ['14px', '16px'],
+            fontWeight: 'normal',
+            lineHeight: '110%',
+        },
+        pWhite: {
+            color: 'white',
             fontSize: ['14px', '16px'],
             fontWeight: 'normal',
             lineHeight: '110%',

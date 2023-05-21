@@ -1,11 +1,13 @@
 import React from 'react';
 import constants from '@/config/constants';
-import { MdDashboard, MdCategory } from 'react-icons/md';
-import { HiShoppingCart } from 'react-icons/hi';
-import { FaUsers, FaShoppingBag } from 'react-icons/fa';
+import { MdDashboard } from 'react-icons/md';
+import { HiShoppingCart, HiShoppingBag, HiCollection } from 'react-icons/hi';
+import { FaUsers } from 'react-icons/fa';
 import { AiFillSetting } from 'react-icons/ai';
+import { CgLogOut } from 'react-icons/cg';
 import Link from 'next/link';
-import { Flex, Stack, Text } from '@chakra-ui/react';
+import Logo from '@/components/common/components/Logo';
+import { useRouter } from 'next/router';
 
 const { CLIENT_ROUTES } = constants;
 
@@ -22,12 +24,12 @@ const Sidebar: React.FC = () => {
             path: CLIENT_ROUTES.admin.orders,
         },
         {
-            icon: <FaShoppingBag />,
+            icon: <HiShoppingBag />,
             name: 'Products',
             path: CLIENT_ROUTES.admin.products,
         },
         {
-            icon: <MdCategory />,
+            icon: <HiCollection />,
             name: 'Categories',
             path: CLIENT_ROUTES.admin.categories,
         },
@@ -42,20 +44,29 @@ const Sidebar: React.FC = () => {
             path: CLIENT_ROUTES.admin.users,
         },
     ];
+    const router = useRouter();
+    const { pathname } = router;
 
     return (
-        <Stack direction={'column'} bg={'blue.900'} width={''} height={'100%'} spacing={'14'}>
+        <div className="bg-customblue2 border-r-[1px] border-r-blue-100 h-full flex flex-col space-y-14">
+            <Logo className="text-white px-6" />
             {ADMIN_MENU.map(({ icon, path, name }) => (
                 <Link href={path} key={path}>
-                    <Flex align="center" px="6" gap="10px" color="white" _hover={{ color: 'blue.500' }}>
-                        <Text fontSize={'2xl'}>{icon}</Text>
-                        <Text as="p" fontWeight={'bold'}>
-                            {name}
-                        </Text>
-                    </Flex>
+                    <section
+                        className={` ${
+                            path === pathname ? 'text-blue-400' : 'text-white'
+                        } hover:text-blue-400 transition-all duration-150 ease-linear flex gap-4 px-6 `}
+                    >
+                        <span className="text-2xl">{icon}</span>
+                        <span className="font-bold">{name}</span>
+                    </section>
                 </Link>
             ))}
-        </Stack>
+            <section className="flex gap-4 px-6 text-white">
+                <CgLogOut fontSize={'24px'} />
+                <span className="font-bold">Logout</span>
+            </section>
+        </div>
     );
 };
 

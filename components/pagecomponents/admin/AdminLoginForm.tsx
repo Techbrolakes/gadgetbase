@@ -11,6 +11,7 @@ import nookies from 'nookies';
 import constants from '@config/constants';
 import helpers from '@/utils/helper';
 import { useRouter } from 'next/router';
+import Logo from '@/components/common/components/Logo';
 
 const { COOKIES } = constants;
 
@@ -52,9 +53,12 @@ const AdminLoginForm: React.FC = () => {
 
     return (
         <section className="bg-primarybg min-h-screen flex justify-center gap-44 items-center">
-            <div className="space-y-6 mt-[-140px]">
-                <h1 className="text-customblue font-semibold text-5xl">Jump right back in</h1>
-                <Text textStyle="p">Sign in to continue</Text>
+            <div className="space-y-16 mt-[-200px]">
+                <Logo className="text-[#0a2e65] !text-6xl !font-normal" />
+                <article className="space-y-6">
+                    <h1 className="text-customblue font-semibold text-5xl">Jump right back in</h1>
+                    <Text textStyle="p">Sign in to continue</Text>
+                </article>
             </div>
             <div className="bg-white h-[350px] w-[600px] shadow-sm rounded-md flex flex-col justify-center items-center">
                 <form onSubmit={handleSubmit} className="w-4/5 space-y-12">

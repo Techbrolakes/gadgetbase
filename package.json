@@ -30,6 +30,7 @@
         "lodash": "^4.17.21",
         "next": "13.4.3",
         "nookies": "^2.5.2",
+        "nprogress": "^0.2.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-hot-toast": "^2.4.1",
@@ -42,6 +43,7 @@
     },
     "devDependencies": {
         "@types/lodash": "^4.14.194",
+        "@types/nprogress": "^0.2.0",
         "autoprefixer": "^10.4.14",
         "eslint-config-airbnb-typescript": "^17.0.0",
         "eslint-config-prettier": "^8.8.0",

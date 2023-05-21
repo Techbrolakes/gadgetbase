@@ -6,7 +6,7 @@ export default function AdminOverviewPage() {
     return (
         <AdminMainLayout>
             <PageHead title="Admin Overview" />
-            <h1 className="h-screen">Admin Overview Page</h1>
+            <h1>Admin Overview Page</h1>
         </AdminMainLayout>
     );
 }
