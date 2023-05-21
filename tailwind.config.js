@@ -11,7 +11,7 @@ module.exports = {
         extend: {
             colors: {
                 customblue: '#0A2E65',
-                primarybg: '#F4F7FA',
+                primarybg: '#F4F4F4',
             },
         },
     },

@@ -30,6 +30,9 @@ const AdminLoginForm: React.FC = () => {
                 if (!response.success) {
                     return helpers.openNotification({ message: response.message, type: 'error' });
                 }
+                if (response.data.admin === false) {
+                    return helpers.openNotification({ message: 'You are not an admin, contact lekan', type: 'error' });
+                }
                 nookies.set(null, COOKIES.user, response.data.token, {
                     maxAge: COOKIES.maxAge,
                     path: COOKIES.path,
@@ -47,7 +50,6 @@ const AdminLoginForm: React.FC = () => {
 
     const { handleChange, values, handleSubmit, isSubmitting, errors, touched } = formik;
 
-    console.log(touched, errors);
     return (
         <section className="bg-primarybg min-h-screen flex justify-center gap-44 items-center">
             <div className="space-y-6 mt-[-140px]">

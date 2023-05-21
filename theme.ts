@@ -14,8 +14,8 @@ const theme = extendTheme({
         },
     },
     fonts: {
-        body: 'Rubik, sans-serif', // Set the font family for the body text
-        heading: 'Rubik, sans-serif', // Set the font family for headings
+        body: 'satoshi, sans-serif', // Set the font family for the body text
+        heading: 'satoshi, sans-serif', // Set the font family for headings
     },
     textStyles: {
         h1: {

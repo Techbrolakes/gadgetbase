@@ -33,6 +33,13 @@ const COOKIES = {
 };
 
 const CLIENT_ROUTES = {
+    admin: {
+        categories: '/admin/categories',
+        orders: '/admin/orders',
+        overview: '/admin/overview',
+        products: '/admin/products',
+        users: '/admin/users',
+    },
     home: '/',
 };
 
