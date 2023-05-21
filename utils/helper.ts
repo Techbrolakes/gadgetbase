@@ -1,5 +1,6 @@
 import toast from 'react-hot-toast';
 import { INotification } from './interfaces';
+import dayjs from 'dayjs';
 
 const openNotification = ({ type, message }: INotification): void => {
     toast[type](message, {
@@ -8,8 +9,12 @@ const openNotification = ({ type, message }: INotification): void => {
         position: 'top-right',
     });
 };
+const formatDate = (dateString: Date) => {
+    return dayjs(dateString).format('DD/MM/YYYY');
+};
 
 const helpers = {
+    formatDate,
     openNotification,
 };
 

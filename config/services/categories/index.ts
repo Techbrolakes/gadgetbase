@@ -20,7 +20,7 @@ const createProductCategory = (payload: Payload): Promise<ApiResponse> =>
 const deleteProductCategory = (id: string): Promise<ApiResponse> =>
     request.destroy({ route: routes.category.deleteProductCategory.replace('%id%', id) });
 
-const updateProductCategory = (id: string, payload: Payload): Promise<ApiResponse> =>
+const updateProductCategory = ({ id, payload }: any): Promise<ApiResponse> =>
     request.put({ payload, route: routes.category.updateProductCategory.replace('%id%', id) });
 
 const CategoryService = {

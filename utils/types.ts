@@ -1,10 +1,10 @@
 export type Category = {
     _id: string;
     category_name: string;
-    category_image: string;
+    category_image?: string;
     category_description: string;
     createdAt: Date;
-    updatedAt: Date;
+    updatedAt?: Date;
 };
 
 export type Product = {
