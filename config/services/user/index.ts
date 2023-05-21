@@ -11,7 +11,7 @@ export interface IUserResponse extends ApiResponse {
     data: IUser;
 }
 
-const getUserDetails = (): Promise<ApiResponse> => request.get({ route: routes.userManagement.getUserDetails });
+const getUserDetails = (): Promise<IUserResponse> => request.get({ route: routes.userManagement.getUserDetails });
 
 const editUser = (payload: Payload): Promise<ApiResponse> =>
     request.post({ payload, route: routes.userManagement.editUser });
@@ -19,10 +19,10 @@ const editUser = (payload: Payload): Promise<ApiResponse> =>
 const resetPassword = (payload: Payload): Promise<ApiResponse> =>
     request.post({ payload, route: routes.userManagement.resetPassword });
 
-const UserService = {
+const ProfileService = {
     editUser,
     getUserDetails,
     resetPassword,
 };
 
-export default UserService;
+export default ProfileService;

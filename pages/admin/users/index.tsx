@@ -2,11 +2,11 @@ import React from 'react';
 import PageHead from '@components/common/components/PageHead';
 import AdminMainLayout from '@/components/layouts/AdminMainLayout';
 
-export default function AdminProductsPage() {
+export default function AdminUsersPage() {
     return (
-        <AdminMainLayout title="Products">
-            <PageHead title="Admin Products" />
-            <h1 className="h-screen">Admin Product Page</h1>
+        <AdminMainLayout title="Users">
+            <PageHead title="Admin Users" />
+            <h1 className="h-screen">Admin Users Page</h1>
         </AdminMainLayout>
     );
 }

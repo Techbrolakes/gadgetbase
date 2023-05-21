@@ -41,7 +41,7 @@ const Sidebar: React.FC = () => {
         {
             icon: <AiFillSetting />,
             name: 'Settings',
-            path: CLIENT_ROUTES.admin.users,
+            path: CLIENT_ROUTES.admin.settings,
         },
     ];
     const router = useRouter();

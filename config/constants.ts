@@ -9,6 +9,15 @@ const API = {
         expiredToken: 'Access denied. Token Expired',
     },
     routes: {
+        address: {
+            createAddress: 'address/create-address',
+            deleteAddress: 'address/delete-address/%id%',
+            getAddresses: 'address/get-addresses',
+            getDefaultAddress: 'address/get-default-address',
+            getSingleAddress: 'address/get-address/%id%',
+            makeDefaultAddress: 'address/make-default-address/%id%',
+            updateAddress: 'address/update-address/%id%',
+        },
         auth: {
             login: 'user/login',
             recoverPassword: 'user/recover',
@@ -16,6 +25,29 @@ const API = {
             resendVerification: 'user/resend',
             resetPassword: 'user/reset-password',
             verifyOtp: '/user/verify-otp',
+        },
+        category: {
+            createProductCategory: 'product/create-product-category',
+            deleteProductCategory: 'product/delete-product-category/%id%',
+            getProductCategories: 'product/get-product-categories',
+            updateProductCategory: 'product/update-product-category/%id%',
+        },
+        orders: {
+            changeOrderStatus: 'order/change-order-status/%id%',
+            createOrder: 'order/create-order',
+            getOrderStats: 'order/order-stats',
+            getUserOrders: 'order/user-orders',
+            payOnDelivery: 'order/pay-on-delivery',
+        },
+        products: {
+            createProduct: 'product/create-product',
+            deleteProduct: 'product/delete-product/%id%',
+            getProductBrandsByCategoryId: 'product/get-products-brands/%id%',
+            getProductByCategoryId: 'product/get-product-category/%id%',
+            getProducts: 'product/get-products',
+            getProductsBrands: 'product/get-products-brands',
+            getSingleProduct: 'product/get-product/%id%',
+            updateProduct: 'product/update-product/%id%',
         },
         userManagement: {
             editUser: 'user/edit',
@@ -38,6 +70,7 @@ const CLIENT_ROUTES = {
         orders: '/admin/orders',
         overview: '/admin/overview',
         products: '/admin/products',
+        settings: '/admin/settings',
         users: '/admin/users',
     },
     home: '/',
