@@ -42,6 +42,12 @@ const theme = extendTheme({
             fontWeight: 'normal',
             lineHeight: '110%',
         },
+        tableText: {
+            color: 'gray.600',
+            fontSize: ['12px', '14px'],
+            fontWeight: 'normal',
+            lineHeight: '110%',
+        },
     },
 });
 

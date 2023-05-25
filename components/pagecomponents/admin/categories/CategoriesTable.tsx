@@ -9,7 +9,9 @@ import CategoryService from '@/config/services/categories';
 import logger from '@/logger';
 import { Category } from '@/utils/types';
 import EditCategory from './EditCategory';
+import constants from './constants';
 
+const { TABLE_HEADINGS } = constants;
 const CategoriesTable: React.FC = () => {
     const queryClient = useQueryClient();
     const { data, isLoading } = useGetProductCategories();
@@ -40,19 +42,19 @@ const CategoriesTable: React.FC = () => {
     if (isLoading) return <CustomSpinner />;
     return (
         <TableContainer bg="white">
-            <Table size="lg">
-                <Thead>
+            <Table size="md">
+                <Thead bg={'blue.600'}>
                     <Tr>
-                        <Th>S/N</Th>
-                        <Th>Date</Th>
-                        <Th>Category Name</Th>
-                        <Th>Category Description</Th>
-                        <Th>Action</Th>
+                        {TABLE_HEADINGS.map((text) => (
+                            <Th key={text} color={'white'} fontFamily={'satoshi'}>
+                                {text}
+                            </Th>
+                        ))}
                     </Tr>
                 </Thead>
                 <Tbody>
                     {data?.data?.map(({ _id, category_name, category_description, createdAt }, index) => (
-                        <Tr textStyle="p" key={_id}>
+                        <Tr textStyle="tableText" key={_id}>
                             <Td>{index + 1}</Td>
                             <Td>{helpers.formatDate(createdAt)}</Td>
                             <Td className="capitalize">{category_name}</Td>

@@ -8,7 +8,9 @@ const {
 } = constants;
 
 interface IProductResponse extends ApiResponse {
-    data: Product[];
+    data: {
+        data: Product[];
+    };
 }
 
 interface IProductBrandResponse extends ApiResponse {

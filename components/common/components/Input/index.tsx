@@ -20,7 +20,7 @@ const Input: React.FC<IProps> = (props) => {
             <FormLabel sx={LabelSX}>{label}</FormLabel>
             <ChakraInput
                 textStyle="p"
-                size="lg"
+                size="md"
                 variant={variant || 'outline'}
                 value={value}
                 placeholder={placeholder}
