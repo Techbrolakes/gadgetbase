@@ -15,7 +15,6 @@ interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<IProps> = ({ name, loading, loadingText, variant, colorScheme, background, width, onClick }) => {
     return (
         <ChakraButton
-            type="submit"
             background={background || 'blue.600'}
             colorScheme={colorScheme || 'blue'}
             borderRadius={'2px'}

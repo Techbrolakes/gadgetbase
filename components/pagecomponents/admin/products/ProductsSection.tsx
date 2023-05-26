@@ -3,6 +3,7 @@ import Button from '@/components/common/components/Button';
 import Input from '@/components/common/components/Input';
 import useGetProducts from '@/hooks/products/useGetProducts';
 import ProductsTable from './ProductsTable';
+import AddProduct from './AddProduct';
 
 const ProductsSection: React.FC = () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -20,6 +21,7 @@ const ProductsSection: React.FC = () => {
                 <Button name="Filter Product" onClick={() => handleOpen()} />
             </div>
             <ProductsTable isLoading={isLoading} data={data?.data?.data} />
+            <AddProduct isOpen={isOpen} setIsOpen={setIsOpen} />
         </section>
     );
 };

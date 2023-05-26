@@ -13,7 +13,7 @@ interface IProps extends SelectProps {
     validateStatus?: boolean;
     help?: React.ReactNode;
     variant?: 'outline' | 'filled' | 'flushed' | 'unstyled';
-    options: IOption[];
+    options: IOption[] | any;
 }
 
 const { InputSX, LabelSX } = extendedStyles;
@@ -33,8 +33,8 @@ const Select: React.FC<IProps> = (props) => {
                 className={className}
                 sx={InputSX}
             >
-                {options.map((option) => (
-                    <option className="space-y-4" key={option.value} value={option.value}>
+                {options.map((option: any) => (
+                    <option className="space-y-4 capitalize" key={option.value} value={option.value}>
                         {option.label}
                     </option>
                 ))}
