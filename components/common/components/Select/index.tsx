@@ -10,7 +10,7 @@ interface IOption {
 
 interface IProps extends SelectProps {
     label?: string;
-    validateStatus?: boolean;
+    validateStatus?: any;
     help?: React.ReactNode;
     variant?: 'outline' | 'filled' | 'flushed' | 'unstyled';
     options: IOption[] | any;

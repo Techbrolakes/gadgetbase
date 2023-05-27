@@ -77,7 +77,7 @@ const getProductBrandsByCategoryId = (id: string): Promise<IProductBrandResponse
 const deleteProduct = (id: string): Promise<ApiResponse> =>
     request.destroy({ route: routes.products.deleteProduct.replace('%id%', id) });
 
-const updateProduct = (id: string, payload: Payload): Promise<ApiResponse> =>
+const updateProduct = ({ id, payload }: any): Promise<ApiResponse> =>
     request.put({ payload, route: routes.products.updateProduct.replace('%id%', id) });
 
 const ProductService = {

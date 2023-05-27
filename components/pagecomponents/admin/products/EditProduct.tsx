@@ -15,22 +15,24 @@ import { useFormik } from 'formik';
 import logger from '@/logger';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import ProductService from '@/config/services/product';
-import schema from './validation';
 import Input from '@/components/common/components/Input';
 import TextArea from '@/components/common/components/TextArea';
 import NumberInput from '@/components/common/components/NumberInput';
 import useGetProductCategories from '@/hooks/categories';
 import Select from '@/components/common/components/Select';
+import { Product } from '@/utils/types';
 
 interface IProps {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    currentProduct: Product;
 }
 
-const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
+const EditProduct: React.FC<IProps> = ({ isOpen, setIsOpen, currentProduct }) => {
     const { data } = useGetProductCategories();
     const queryClient = useQueryClient();
-    const mutation = useMutation(ProductService.createProduct);
+    const id = currentProduct?._id;
+    const mutation = useMutation(ProductService.updateProduct);
 
     const productCategories = data?.data?.map(({ category_name, _id }) => ({
         label: category_name,
@@ -40,13 +42,13 @@ const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
-            category_id: '',
-            product_brand: '',
-            product_description: '',
-            product_image: '',
-            product_name: '',
-            product_price: '',
-            product_quantity: '',
+            category_id: '' || currentProduct?.category_id,
+            product_brand: '' || currentProduct?.product_brand,
+            product_description: '' || currentProduct?.product_description,
+            product_image: '' || currentProduct?.product_image,
+            product_name: '' || currentProduct?.product_name,
+            product_price: '' || currentProduct?.product_price,
+            product_quantity: '' || currentProduct?.product_quantity,
         },
         onSubmit: async (
             {
@@ -70,7 +72,7 @@ const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                 product_quantity,
             };
             try {
-                const response = await mutation.mutateAsync(payload);
+                const response = await mutation.mutateAsync({ id, payload });
                 if (!response.success) {
                     return helpers.openNotification({ message: response.message, type: 'error' });
                 }
@@ -84,7 +86,6 @@ const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                 resetForm();
             }
         },
-        validationSchema: schema.createProduct,
     });
 
     const { handleChange, values, handleSubmit, isSubmitting, errors, touched, setFieldValue } = formik;
@@ -95,7 +96,7 @@ const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
             <DrawerOverlay className="opacity-20 bg-black" />
             <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>Create new product</DrawerHeader>
+                <DrawerHeader>Edit Product</DrawerHeader>
 
                 <DrawerBody>
                     <form className="space-y-8 my-8">
@@ -160,7 +161,7 @@ const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                             background={'blue.600'}
                             loading={isSubmitting}
                             colorScheme="blue"
-                            name="Add Product"
+                            name="Edit Product"
                             onClick={handleSubmit}
                         />
                         <Button
@@ -176,4 +177,4 @@ const AddProduct: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
     );
 };
 
-export default AddProduct;
+export default EditProduct;

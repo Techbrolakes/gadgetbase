@@ -65,7 +65,7 @@ const AddCategory: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                 <DrawerHeader>Create new category</DrawerHeader>
 
                 <DrawerBody>
-                    <form className="space-y-10 mt-6">
+                    <div className="space-y-10 mt-6">
                         <Input
                             name={'category_name'}
                             onChange={handleChange}
@@ -86,17 +86,17 @@ const AddCategory: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                             label="Category Description"
                             placeholder="Enter Category Description"
                         />
+                    </div>
+                </DrawerBody>
+
+                <DrawerFooter>
+                    <div className="flex gap-4">
                         <Button
                             name="Create Category"
                             loadingText="Creating....."
                             onClick={handleSubmit}
                             loading={isSubmitting}
                         />
-                    </form>
-                </DrawerBody>
-
-                <DrawerFooter>
-                    <div className="flex gap-4">
                         <Button
                             background={'red.500'}
                             colorScheme="red"

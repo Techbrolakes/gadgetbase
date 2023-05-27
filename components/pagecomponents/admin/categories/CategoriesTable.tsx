@@ -10,12 +10,16 @@ import logger from '@/logger';
 import { Category } from '@/utils/types';
 import EditCategory from './EditCategory';
 import constants from './constants';
+import CustomAlertDialog from '@/components/common/components/AlertDialog';
 
 const { TABLE_HEADINGS } = constants;
 const CategoriesTable: React.FC = () => {
     const queryClient = useQueryClient();
     const { data, isLoading } = useGetProductCategories();
-    const [loadingId, setLoadingId] = React.useState<string | null>(null);
+    const [loadingId, setLoadingId] = React.useState<any>(null);
+    const [loading, setLoading] = React.useState(false);
+    const [isOpenDialog, setIsOpenDialog] = React.useState(false);
+    const [name, setName] = React.useState('');
     const [isOpen, setIsOpen] = React.useState(false);
     const [currentCategory, setCurrentCategory] = React.useState<Category>();
 
@@ -23,6 +27,7 @@ const CategoriesTable: React.FC = () => {
 
     const handleDelete = async (id: string) => {
         setLoadingId(id);
+        setLoading(true);
         try {
             const response = await mutation.mutateAsync(id);
             if (!response.success) {
@@ -36,6 +41,8 @@ const CategoriesTable: React.FC = () => {
             return logger(error);
         } finally {
             setLoadingId(null);
+            setLoading(false);
+            setIsOpenDialog(false);
         }
     };
 
@@ -74,8 +81,11 @@ const CategoriesTable: React.FC = () => {
                                         name="Delete"
                                         colorScheme="red"
                                         background="red.500"
-                                        onClick={() => handleDelete(_id)}
-                                        loading={loadingId === _id}
+                                        onClick={() => {
+                                            setIsOpenDialog(true);
+                                            setLoadingId(_id);
+                                            setName(category_name);
+                                        }}
                                         loadingText="Deleting......"
                                     />
                                 </div>
@@ -84,6 +94,14 @@ const CategoriesTable: React.FC = () => {
                     ))}
                 </Tbody>
             </Table>
+
+            <CustomAlertDialog
+                loading={loading}
+                isOpen={isOpenDialog}
+                setIsOpen={setIsOpenDialog}
+                handleDelete={() => handleDelete(loadingId)}
+                title={`Delete ${name} category`}
+            />
 
             <EditCategory isOpen={isOpen} setIsOpen={setIsOpen} currentCategory={currentCategory} />
         </TableContainer>

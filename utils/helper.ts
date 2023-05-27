@@ -1,4 +1,4 @@
-import toast from 'react-hot-toast';
+import { toast, Slide } from 'react-toastify';
 import { INotification } from './interfaces';
 import dayjs from 'dayjs';
 
@@ -11,11 +11,18 @@ interface IProps {
 
 const openNotification = ({ type, message }: INotification): void => {
     toast[type](message, {
-        className: 'text-sm',
-        duration: 5000,
-        position: 'top-right',
+        autoClose: 5000,
+        className: '!text-sm !bg-customblue !text-white',
+        closeOnClick: true,
+        draggable: true,
+        hideProgressBar: false,
+        pauseOnHover: true,
+        position: 'top-center',
+        progress: undefined,
+        transition: Slide,
     });
 };
+
 const formatDate = (dateString: Date) => {
     return dayjs(dateString).format('DD MMM YYYY');
 };
