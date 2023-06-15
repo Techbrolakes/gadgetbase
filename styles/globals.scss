@@ -49,4 +49,7 @@
     .gb-radius {
         @apply rounded-tl-3xl rounded-tr-3xl rounded-br-3xl;
     }
+    .gb-container {
+        @apply px-6 sm:px-12 md:px-14 lg:px-28 xl:px-28 2xl:px-32 mx-auto;
+    }
 }

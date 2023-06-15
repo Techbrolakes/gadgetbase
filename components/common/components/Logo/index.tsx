@@ -13,7 +13,10 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
     const router = useRouter();
     return (
         <>
-            <Heading onClick={() => router.push(CLIENT_ROUTES.home)} className={`p-2 cursor-pointer ${className}`}>
+            <Heading
+                onClick={() => router.push(CLIENT_ROUTES.home)}
+                className={`p-2 cursor-pointer tracking-wide text-[#1e55b3] ${className}`}
+            >
                 Gadgetbase
             </Heading>
         </>
