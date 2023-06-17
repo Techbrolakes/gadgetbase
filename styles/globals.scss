@@ -50,6 +50,9 @@
         @apply rounded-tl-3xl rounded-tr-3xl rounded-br-3xl;
     }
     .gb-container {
-        @apply px-6 sm:px-12 md:px-14 lg:px-28 xl:px-28 2xl:px-32 mx-auto;
+        @apply px-6 sm:px-12 md:px-14 lg:px-20 xl:px-20 2xl:px-24 mx-auto;
+    }
+    .gb-link {
+        @apply capitalize cursor-pointer px-4 py-3 duration-150 transition-all ease-linear hover:text-white hover:bg-blue-500;
     }
 }

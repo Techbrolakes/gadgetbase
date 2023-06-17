@@ -17,6 +17,7 @@
         "paths": {
             "@/*": ["./*"],
             "@components/*": ["./components/*"],
+            "@animations/*": ["./animations/*"],
             "@pages/*": ["./pages/*"],
             "@styles/*": ["./styles/*"],
             "@utils/*": ["./utils/*"],
