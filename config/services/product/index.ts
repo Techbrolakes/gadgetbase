@@ -23,15 +23,10 @@ const createProduct = (payload: Payload): Promise<ApiResponse> =>
 const getSingleProduct = (id: string): Promise<IProductResponse> =>
     request.get({ route: routes.products.getSingleProduct.replace('%id%', id) });
 
-const getProductsByCategoryId = ({
-    id,
-    brand,
-    maxPrice,
-    minPrice,
-    page,
-    pageLimit,
-    search,
-}: ProductParams): Promise<IProductResponse> =>
+const getProductsByCategoryId = (
+    { brand, maxPrice, minPrice, page, pageLimit, search }: ProductParams,
+    id: any,
+): Promise<IProductResponse> =>
     request.get({
         config: {
             params: {

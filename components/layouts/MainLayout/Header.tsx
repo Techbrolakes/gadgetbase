@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     const { data } = useGetProductCategories();
 
     return (
-        <div className="flex justify-between items-center py-4">
+        <div className="hidden lg:flex justify-between items-center py-4">
             <Logo />
 
             <section className="flex gap-16 text">
