@@ -24,10 +24,6 @@ const GbImage: React.FC<IProps> = ({ src, alt, width, height, className, priorit
                 placeholder="blur"
                 blurDataURL="/images/placeholder.png"
                 quality={quality}
-                style={{
-                    height: 'auto',
-                    maxWidth: '100%',
-                }}
             />
         </div>
     );

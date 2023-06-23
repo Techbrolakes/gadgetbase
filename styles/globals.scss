@@ -53,6 +53,30 @@
         @apply px-6 sm:px-12 md:px-14 lg:px-20 xl:px-20 2xl:px-24 mx-auto;
     }
     .gb-link {
-        @apply capitalize cursor-pointer px-4 py-3 duration-150 transition-all ease-linear hover:text-white hover:bg-blue-500;
+        @apply capitalize cursor-pointer px-4 py-2 duration-150 transition-all ease-linear hover:text-white hover:bg-blue-500;
+    }
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+    .flex-center-col {
+        @apply flex flex-col justify-center items-center;
+    }
+    .flex-start {
+        @apply flex justify-start items-center;
+    }
+    .flex-start-col {
+        @apply flex flex-col justify-start items-center;
+    }
+    .flex-end {
+        @apply flex justify-end items-center;
+    }
+    .flex-end-col {
+        @apply flex flex-col justify-end items-center;
+    }
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
+    .flex-between-col {
+        @apply flex flex-col justify-between items-center;
     }
 }

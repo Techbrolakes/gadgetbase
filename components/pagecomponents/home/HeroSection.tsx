@@ -6,7 +6,7 @@ import { Input, Text } from '@chakra-ui/react';
 
 const HeroSection: React.FC = () => {
     return (
-        <div className="bg-white h-[75vh] p-2 flex justify-between items-center">
+        <div className="bg-white max-h-[75vh] p-2 flex justify-between items-center">
             <section className="space-y-16 p-4 pl-16">
                 <Text className="text-5xl font-semibold w-3/4 leading-snug text-customblue">
                     Best place for all your Gadgets
@@ -17,8 +17,8 @@ const HeroSection: React.FC = () => {
                 </div>
             </section>
 
-            <section className="">
-                <Lottie animationData={shoppingCart} className="w-[600px]" />
+            <section className="basis-3/5">
+                <Lottie animationData={shoppingCart} />
             </section>
         </div>
     );

@@ -1,9 +1,13 @@
-import { Spinner } from '@chakra-ui/react';
 import React from 'react';
+import { Spinner } from '@chakra-ui/react';
 
-const CustomSpinner = () => {
+interface IProps {
+    fullHeight?: boolean;
+}
+
+const CustomSpinner: React.FC<IProps> = ({ fullHeight }) => {
     return (
-        <div className="min-h-[70vh] flex items-center justify-center">
+        <div className={`${fullHeight ? 'min-h-screen' : 'min-h-[40vh]'} flex-center`}>
             <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
         </div>
     );
