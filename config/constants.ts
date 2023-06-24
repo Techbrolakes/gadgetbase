@@ -74,6 +74,11 @@ const CLIENT_ROUTES = {
         users: '/admin/users',
     },
     home: '/',
+    products: {
+        allProducts: '/products',
+        category: '/products/category/%id%',
+        single: '/products/%id%',
+    },
 };
 
 const constants = {
